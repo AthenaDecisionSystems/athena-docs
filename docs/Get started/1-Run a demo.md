@@ -1,9 +1,13 @@
-# Run a demo
-
-We offer you two possible paths.
+# Run a demo of Athena AI
 
 ## Run a demo on your machine in 5 minutes
-Click on the link on the left navigation bar that corresponds to your machine.
+<div class="grid cards" markdown>
+-   :octicons-arrow-right-24: **[Run a demo on Mac :fontawesome-brands-apple:](./2-Install and run on Mac.md)** 
+-   :octicons-arrow-right-24: **[Run a demo on Windows :fontawesome-brands-windows:](./3-Install and run on Windows.md)**  
+</div>
+
 
 ## Play with a hosted demo
-Coming soon...
+<div class="grid cards" markdown>
+- (Coming soon) Try our SaaS demo :octicons-cloud-16:
+</div>

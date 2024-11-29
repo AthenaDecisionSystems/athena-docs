@@ -1,4 +1,4 @@
-# Comprehensive Install Guide to run the IBU Insurance demo
+# Guide to run the IBU Insurance demo
 
 This guide provides step-by-step instructions to set up this demo on macOS.
 
