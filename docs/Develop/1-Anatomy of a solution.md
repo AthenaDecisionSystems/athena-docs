@@ -36,7 +36,7 @@ Agent management has two parts: 1/ the management of the OwlAgent entity definit
 
 In any solution the conversation manager service use one agent runner.
 
-### Promps
+### Prompts
 ### Documents
 ### Tools
 ### Agentic workflow
