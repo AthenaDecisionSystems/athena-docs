@@ -21,7 +21,7 @@ Alternatively and if you have an SSH key installed for github, you can do this:
 git clone git@github.com:AthenaDecisionSystems/athena-owl-core.git 
 git clone git@github.com:AthenaDecisionSystems/athena-owl-demos.git
 ```
-
+The athena-owl-core repository contains the code of the Athena backend (implemented using FastAPI) and frontend component (implemented as a single page application using React). As developers, we will see how we can build a custom app. We will be able to reuse some code, for instance Python functions from the backend.
 
 Create a folder that will be the placeholder for your first Athena project: 
 ```
