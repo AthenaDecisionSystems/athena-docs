@@ -92,6 +92,7 @@ extra:
       link: 'https://www.linkedin.com/company/athena-decision-systems/'
 
 markdown_extensions:
+  - pymdownx.tabbed
   - pymdownx.highlight:
       anchor_linenums: true
       line_spans: __span
@@ -102,7 +103,6 @@ markdown_extensions:
   - admonition
   - pymdownx.arithmatex:
       generic: true
-      
   - footnotes
   - pymdownx.details
   - pymdownx.superfences

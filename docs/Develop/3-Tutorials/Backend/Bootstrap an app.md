@@ -1,7 +1,7 @@
 # Tutorial - Bootstrap your AI app project
 
 ## Prerequisites
-:information_source: *You will need Docker and Docker Desktop on your machine.*
+:information_source: *You will need to be able to run Docker on your machine. The following instructions have been built using Docker Desktop but you can use alternative tools such as Colima or Rancher Desktop.*
 
 ## Create an 'Hello World' Agent App with Athena Owl Framework
 
@@ -30,9 +30,11 @@ mkdir my-athena-ai-app
 :information_source: **Recommendation:** *place the 'my-athena-ai-app' folder directly under the AthenaDecisionSystems folder (so at the same level as the 'athena-owl-core' folder) on your disk. We provide some scripts that rely on relative paths and they will be easier to use.*
 
 Copy the content of the skeleton app SkeletonAppHelloLLM into your app folder
+
 ```
 cp -a athena-owl-demos/SkeletonApp-HelloLLM/. my-athena-ai-app/
 ```
+
 Create a .env file in the app folder
 Add the API keys for the various third party providers that you want to use. 
 ```
@@ -85,18 +87,91 @@ The capital of Italy is Rome.
 
 ```
 
-- our agent has been configured to use Tavily to search the web for all queries that require fresh data that was not available when the LLM was trained.
+- The agent has been configured with some tools and will use a specific tool to retrieve customer data based on their email address. If you enter the following query:
 ```
-As of today, what is the exchange rate between dollars and euros?
+What are the details of peter@acme.com?
+```
+You will get the following response:
+``` { .text .no-copy }
+Here are the details for the client with the email "peter@acme.com":
+    Email: peter@acme.com
+    Date of Birth: December 14, 1994
+    Income: $19,500 USD
+    Country of Residence: United States
+```
+The response is returned by a custom function that mimicks a call to an enterprise data API.
+
+- The agent can also use Tavily to search the web for all queries that require fresh data that was not available when the LLM was trained.
+```
+what is the weather today in London? 
+please also provide your source in terms of web url
 ```
 The agent will perform an API call to Tavily. A reasonable answer should look like:
 ``` { .text .no-copy }
-SSS
+The current weather in London is as follows:
+
+    Temperature: 7.2°C (45.0°F)
+    Condition: Light drizzle
+    Wind: 5.4 mph (8.6 kph) from the northeast
+    Humidity: 100%
+    Pressure: 1029.0 mb
+    Visibility: 6.0 km (3.0 miles)
+    Feels Like: 5.6°C (42.0°F)
+
+This information is sourced from WeatherAPI.
 ```
 
-- tool calling to retrieve customer data 
+Play with the Athena Backend APIs using Swagger UI
+Start a browser and point to <a href="http://localhost:8002/docs" target="_blank">localhost:8002/docs</a>
+Use the generic_chat endpoint with the following JSON payload
+``` json
+{
+  "locale": "en",
+  "query": "what is the data of pierre@acme.fr?",
+  "user_id": "123",
+  "agent_id": "hello_world_agent_with_tools"
+}
+```
+The response should look like this
+``` json
+{
+  "messages": [
+    {
+      "content": "The data for the email address pierre@acme.fr is as follows:\n\n- **Date of Birth**: December 14, 1994\n- **Income**: 19,500 EUR\n- **Country of Residence**: France",
+      "style_class": null
+    }
+  ],
+  "closed_questions": null,
+  "reenter_into": null,
+  "status": 200,
+  "error": "",
+  "chat_history": [
+    {
+      "content": "what is the data of pierre@acme.fr?",
+      "role": "human"
+    },
+    {
+      "content": "The data for the email address pierre@acme.fr is as follows:\n\n- **Date of Birth**: December 14, 1994\n- **Income**: 19,500 EUR\n- **Country of Residence**: France",
+      "role": "AI"
+    }
+  ],
+  "user_id": "123",
+  "agent_id": "hello_world_agent_with_tools",
+  "thread_id": "8d3a7baf-b266-4f35-9a28-04edff0a5703"
+}
+```
 
-==Play with Swagger ui== 
-
-==Make a direct call the the APIs using cURL== 
+If you want, you can also make direct calls to the Athena Backend APIs using cURL from a terminal.
+```
+curl -X 'POST' \
+  'http://localhost:8002/api/v1/c/generic_chat' \
+  -H 'accept: application/json' \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "locale": "en",
+  "query": "what is the data of pierre@acme.fr?",
+  "user_id": "123",
+  "agent_id": "hello_world_agent_with_tools"
+}'
+```
 
