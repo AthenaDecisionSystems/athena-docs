@@ -1,3 +1,3 @@
 # Owl Core Python library
 
-Some text here
+Coming soon

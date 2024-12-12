@@ -46,7 +46,7 @@ In any solution the conversation manager service use one agent runner.
 ### Backend APIs
 ### Hooks to custom code
 
-Some text here
+Coming soon
 
 ## An out-of-the-box chatbot frontend webapp
 

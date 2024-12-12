@@ -1,13 +1,14 @@
 # Overview of tutorials
 
-## Build an Owl App Bootcamp
+## Build an AI App Bootcamp
+
 
 <div class="grid cards" markdown>
-- **Bootstrap** your app project
-- Add tools to call **data and decision APIs**
-- Add **RAG**
-- Add **human in the loop** controlled by LangGraph
-- Create new backend API endpoints
+- [:material-rocket-launch-outline: Bootstrap your AI app project](./Backend/Bootstrap an app.md)
+- :octicons-gear-16: Leverage data and decision APIs
+- :material-file-document: Leverage documents with RAG
+- :fontawesome-solid-user-gear: Add human in the loop
+- :material-code-not-equal-variant: Create new backend API endpoints
 </div>
 
 ## Use various providers

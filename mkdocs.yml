@@ -1,4 +1,4 @@
-site_name: Athena AI Documentation
+site_name: Athena Hybrid AI
 copyright: Copyright &copy; 2024 Athena Decision Systems
 repo_url: https://github.com/AthenaDecisionSystems/athena-docs
 extra_css: 
@@ -51,8 +51,8 @@ nav:
   - Develop:
     - Tutorials:
       - Overview: Develop/3-Tutorials/index.md
-      - "Agent Backend":
-        - Agent with single LLM: Develop/3-Tutorials/Backend/Simple agent.md
+      - "AI App Bootcamp":
+        - Bootstrap your app project: Develop/3-Tutorials/Backend/Bootstrap an app.md
         - RAG: Develop/3-Tutorials/Backend/RAG.md
         - Tool calling to data and decision services: Develop/3-Tutorials/Backend/Tool calling.md
         - Human in the loop: Develop/3-Tutorials/Backend/Human in the loop.md
