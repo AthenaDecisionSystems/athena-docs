@@ -29,7 +29,7 @@ mkdir my-athena-ai-app
 ```
 :information_source: **Recommendation:** *place the 'my-athena-ai-app' folder directly under the AthenaDecisionSystems folder (so at the same level as the 'athena-owl-core' folder) on your disk. We provide some scripts that rely on relative paths and they will be easier to use.*
 
-Copy the skeleton app SkeletonAppHelloLLM into your app folder and rename it
+Copy the content of the skeleton app SkeletonAppHelloLLM into your app folder
 ```
 cp -a athena-owl-demos/SkeletonApp-HelloLLM/. my-athena-ai-app/
 ```
@@ -73,11 +73,26 @@ d1bee478ae99   athenadecisionsystems/athena-owl-backend:1.0.0    "uvicorn athena
 
 We are now ready to interact with our Hello World AI application.
 
-==Start a browser and point to localhost:3000==
+Start a browser and point to <a href="http://localhost:3000" target="_blank">localhost:3000</a>
 
-- generic requests will be served by the configured LLM 
+- we will use the OOTB chatbot to send queries that will be served by the pre-configured LLM. Click on the Chatbot tab in the top navigation bar. In the chat, enter the following message:
+```
+What is the capital of Italy?
+```
+The agent will use the common knowledge of an LLM like OpenAI to provide an answer. A reasonable answer should look like:
+``` { .text .no-copy }
+The capital of Italy is Rome.
 
-- tool calling to search the web 
+```
+
+- our agent has been configured to use Tavily to search the web for all queries that require fresh data that was not available when the LLM was trained.
+```
+As of today, what is the exchange rate between dollars and euros?
+```
+The agent will perform an API call to Tavily. A reasonable answer should look like:
+``` { .text .no-copy }
+SSS
+```
 
 - tool calling to retrieve customer data 
 
