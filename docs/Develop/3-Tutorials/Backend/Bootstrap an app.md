@@ -1,9 +1,16 @@
-# Tutorial - Bootstrap your AI app project
+# Tutorial - Bootstrap your AI app project 
+
+In this tutorial, we will guide you through all the steps needed to create a new AI app with the Athena Owl Framework.
+
+We will:  
+- create a new AI app project from a template  
+- run the AI app so that you can understand the various ways to interact with the app  
+- modify the AI app to add a new agent with its own prompt and a custom tool
 
 ## Prerequisites
 :information_source: *You will need to be able to run Docker on your machine. The following instructions have been built using Docker Desktop but you can use alternative tools such as Colima or Rancher Desktop.*
 
-## Create an 'Hello World' Agent App with Athena Owl Framework
+## Create a new Agent App from a template
 
 Create a working directory for everything related to Athena and move into it. From a terminal, you can do:
 ```
@@ -73,7 +80,9 @@ d1bee478ae99   athenadecisionsystems/athena-owl-backend:1.0.0    "uvicorn athena
 35530e7bd690   athenadecisionsystems/athena-owl-frontend:1.0.0   "docker-entrypoint.s…"   6 days ago       Up 10 seconds   0.0.0.0:3000->3000/tcp   owl-frontend
 ```
 
+## Run the default 'Hello LLM' Agent App
 We are now ready to interact with our Hello World AI application.
+Running our Agent App is a good way to understand how we can interact with it, either using an out-of-the-box chatbot provided as a webapp or by calling APIs.
 
 Start a browser and point to <a href="http://localhost:3000" target="_blank">localhost:3000</a>
 
@@ -175,3 +184,13 @@ curl -X 'POST' \
 }'
 ```
 
+## Create your own Agent App
+
+### Create a new prompt
+Edit the prompts.yaml file under ...
+
+### Create a new agent
+Edit the agents.yaml file
+
+### Add a new tool
+Register a new function as a tool in the tool factory
