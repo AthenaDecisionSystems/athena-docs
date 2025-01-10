@@ -186,12 +186,12 @@ curl -X 'POST' \
 
 ## Tailor the Agent App to your needs
 
-Let's have a look at the `docker-compose.yaml` file under `deployment/local` to understand how an application can be customized. The docker compose files defines a component called `ibu-backend` that uses a predefined Docker image provided by Athena Decision Systems.
+Let's have a look at the `docker-compose.yaml` file under `deployment/local` to understand how an application can be customized. The docker compose file defines a component called `ibu-backend` that uses a predefined Docker image provided by Athena Decision Systems and serves APIs to interact with the agent app.
 
-We running a Docker container for the ibu-backend image, it will be able to access 3 mounted volumes that play a crucial role to customize the application:
-- `../../ibu_backend/src/config:/app/config`. This mounted volume will be used to access various configuration files for our app, such a prompts.yaml, agents.yaml
-- `../../ibu_backend/src/ibu:/app/ibu`. This mounted volume will be used to access your custom Python code.
-- `./data/file_content:/app/file_content`. This mounted volume will be used to store the document database used for RAG.
+When running an ibu-backend Docker container, it will be able to access 3 mounted volumes that play a crucial role to customize the application:
+- `../../ibu_backend/src/config:/app/config`. This mounted volume is used to access various configuration files for our app, such a prompts.yaml, agents.yaml
+- `../../ibu_backend/src/ibu:/app/ibu`. This mounted volume is used to access your custom Python code.
+- `./data/file_content:/app/file_content`. This mounted volume is used to store the document database used for RAG.
 
 
 ```yaml

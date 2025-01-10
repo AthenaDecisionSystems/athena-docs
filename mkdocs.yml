@@ -55,6 +55,7 @@ nav:
         - Bootstrap your app project: Develop/3-Tutorials/Backend/Bootstrap an app.md
         - RAG: Develop/3-Tutorials/Backend/RAG.md
         - Tool calling to data and decision services: Develop/3-Tutorials/Backend/Tool calling.md
+        - Agentic worflow: Develop/3-Tutorials/Backend/Agentic workflow.md
         - Human in the loop: Develop/3-Tutorials/Backend/Human in the loop.md
 
       - "Using various LLM providers":
